@@ -542,7 +542,7 @@ function runTier2() {
       : contactResult.content;
 
     const content = contactSectionContent || "";
-    const expectedEmail = "esther@neurogrid.site";
+    const expectedEmail = "esther@neurogriddos.site";
     const legacyEmail = "dispatch@neurogrid-os.io";
 
     // Extract all email addresses matching regex
@@ -556,7 +556,7 @@ function runTier2() {
     assertTest(
       "tier2",
       "E2E-T2-03",
-      "Contact Us section contains EXACTLY 1 business email (esther@neurogrid.site) and zero extraneous emails",
+      "Contact Us section contains EXACTLY 1 business email (esther@neurogriddos.site) and zero extraneous emails",
       passed,
       {
         expected: `Exactly 1 email (${expectedEmail})`,

@@ -379,8 +379,8 @@ const uniquePhones = [...new Set(phones.map(p => p.replace(/\D/g, "")))];
 assert(
   "NEG-CONTACT",
   `ContactUs contains exactly 1 email (${uniqueEmails[0]}) and 1 phone (${uniquePhones[0]})`,
-  uniqueEmails.length === 1 && uniquePhones.length === 1 && (uniqueEmails[0] === "esther@neurogrid.site" || uniqueEmails[0] === "dispatch@neurogrid-os.io"),
-  { expected: "1 email: esther@neurogrid.site, 1 phone: +234 913 608 8893", observed: `Emails: ${JSON.stringify(uniqueEmails)}, Phones: ${JSON.stringify(uniquePhones)}` }
+  uniqueEmails.length === 1 && uniquePhones.length === 1 && (uniqueEmails[0] === "esther@neurogriddos.site" || uniqueEmails[0] === "dispatch@neurogrid-os.io"),
+  { expected: "1 email: esther@neurogriddos.site, 1 phone: +234 913 608 8893", observed: `Emails: ${JSON.stringify(uniqueEmails)}, Phones: ${JSON.stringify(uniquePhones)}` }
 );
 
 // ==============================================================================

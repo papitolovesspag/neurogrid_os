@@ -63,10 +63,10 @@ export function ContactUs() {
                 Direct Executive &amp; Dispatch Email
               </div>
               <a
-                href="mailto:esther@neurogrid.site"
+                href="mailto:esther@neurogriddos.site"
                 className="text-lg font-bold font-mono text-slate-900 dark:text-slate-100 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors mt-1 block"
               >
-                esther@neurogrid.site
+                esther@neurogriddos.site
               </a>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                 Monitored for enterprise partnerships, grid integrations, and dispatch queries.

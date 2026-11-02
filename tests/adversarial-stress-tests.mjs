@@ -159,7 +159,7 @@ const srcFiles = getAllFiles(path.join(projectRoot, "src")).concat(
   assert(
     "ADV-04",
     "Contact cardinality: Exactly 1 email (dispatch@neurogrid-os.io) and exactly 1 phone (14158904743)",
-    emails.length === 1 && (emails[0] === "esther@neurogrid.site" || emails[0] === "dispatch@neurogrid-os.io") &&
+    emails.length === 1 && (emails[0] === "esther@neurogriddos.site" || emails[0] === "dispatch@neurogrid-os.io") &&
     phones.length === 1 && (phones[0] === "2349136088893" || phones[0] === "14158904743"),
     `Emails (${emails.length}): ${JSON.stringify(emails)}; Phones (${phones.length}): ${JSON.stringify(phones)}`
   );
