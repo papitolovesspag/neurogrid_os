@@ -27,9 +27,9 @@ export function AboutUs() {
           <div className="relative w-48 h-56 sm:w-56 sm:h-64 rounded-2xl overflow-hidden border-2 border-cyan-500/40 shadow-xl shadow-cyan-500/10 shrink-0 group">
             <Image
               src="/founder.jpg"
-              alt="Ngozi - Founder & CEO of NeuroGrid OS"
+              alt="Esther - Founder & CEO of NeuroGrid OS"
               fill
-              className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              className="object-cover object-[center_35%] transition-transform duration-500 group-hover:scale-105"
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950/80 via-transparent to-transparent pointer-events-none" />
@@ -52,7 +52,7 @@ export function AboutUs() {
                 <span>Executive Leadership</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100">
-                Ngozi
+                Esther
               </h3>
               <p className="text-sm font-mono text-cyan-600 dark:text-cyan-400 font-semibold mt-0.5">
                 Founder &amp; Chief Executive Officer
@@ -60,7 +60,7 @@ export function AboutUs() {
             </div>
 
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-              Ngozi is a visionary clean-tech entrepreneur and systems architect dedicated to revolutionizing the global energy transition. Combining deep technical insight across distributed energy resources, real estate, and financial technology, she architected NeuroGrid OS to solve the bidirectional power crisis of the modern grid. Under her leadership, NeuroGrid OS orchestrates residential solar, smart batteries, and EV charging fleets into autonomous, yield-generating Virtual Power Plants—democratizing energy arbitrage for everyday homeowners while building a resilient, zero-carbon grid for tomorrow.
+              Esther is a visionary clean-tech entrepreneur and systems architect dedicated to revolutionizing the global energy transition. Combining deep technical insight across distributed energy resources, real estate, and financial technology, she architected NeuroGrid OS to solve the bidirectional power crisis of the modern grid. Under her leadership, NeuroGrid OS orchestrates residential solar, smart batteries, and EV charging fleets into autonomous, yield-generating Virtual Power Plants—democratizing energy arbitrage for everyday homeowners while building a resilient, zero-carbon grid for tomorrow.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs font-mono">

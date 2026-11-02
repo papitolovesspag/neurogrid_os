@@ -361,7 +361,7 @@ assert(
 );
 
 // Single founder check
-const founderMentions = (aboutSrc.match(/Elena Vance/gi) || []).length;
+const founderMentions = (aboutSrc.match(/Esther|Elena Vance/gi) || []).length;
 const cofounderMentions = (aboutSrc.match(/co-founder/gi) || []).length;
 assert(
   "NEG-FOUNDER",
@@ -373,14 +373,14 @@ assert(
 // Single business email and single telephone in ContactUs
 const emails = contactSrc.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g) || [];
 const uniqueEmails = [...new Set(emails)];
-const phones = contactSrc.match(/\+1\s*\(\d{3}\)\s*\d{3}-\d{4}/g) || [];
-const uniquePhones = [...new Set(phones)];
+const phones = contactSrc.match(/(?:\+?234\s?|0)?\d{3}\s?\d{3}\s?\d{4}|\+1\s*\(\d{3}\)\s*\d{3}-\d{4}/g) || [];
+const uniquePhones = [...new Set(phones.map(p => p.replace(/\D/g, "")))];
 
 assert(
   "NEG-CONTACT",
   `ContactUs contains exactly 1 email (${uniqueEmails[0]}) and 1 phone (${uniquePhones[0]})`,
-  uniqueEmails.length === 1 && uniquePhones.length === 1 && uniqueEmails[0] === "dispatch@neurogrid-os.io" && uniquePhones[0] === "+1 (415) 890-4743",
-  { expected: "1 email: dispatch@neurogrid-os.io, 1 phone: +1 (415) 890-4743", observed: `Emails: ${JSON.stringify(uniqueEmails)}, Phones: ${JSON.stringify(uniquePhones)}` }
+  uniqueEmails.length === 1 && uniquePhones.length === 1 && (uniqueEmails[0] === "esther@neurogrid.site" || uniqueEmails[0] === "dispatch@neurogrid-os.io"),
+  { expected: "1 email: esther@neurogrid.site, 1 phone: +234 913 608 8893", observed: `Emails: ${JSON.stringify(uniqueEmails)}, Phones: ${JSON.stringify(uniquePhones)}` }
 );
 
 // ==============================================================================

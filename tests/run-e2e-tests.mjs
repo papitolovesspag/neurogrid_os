@@ -444,9 +444,9 @@ function runTier2() {
 
     const content = aboutSectionContent || "";
 
-    // Required founder: Ngozi (or legacy placeholder Dr. Elena Vance)
-    const hasFounder = content.includes("Ngozi") || content.includes("Dr. Elena Vance") || content.includes("Elena Vance");
-    const hasFounderBio = content.includes("Ngozi") ||
+    // Required founder: Esther (or legacy placeholder Dr. Elena Vance)
+    const hasFounder = content.includes("Esther") || content.includes("Dr. Elena Vance") || content.includes("Elena Vance");
+    const hasFounderBio = content.includes("Esther") ||
       content.includes("Ph.D.") ||
       content.includes("Stanford") ||
       content.includes("Power Systems") ||
@@ -459,7 +459,7 @@ function runTier2() {
     const secondaryExecMatches = content.match(/\b(Co-CEO|Chief Technology Officer|CTO|COO|CFO)\b/g) || [];
 
     // Distinct founder names detected
-    const founderNameMatches = (content.match(/Ngozi|Elena Vance/g) || []).length;
+    const founderNameMatches = (content.match(/Esther|Elena Vance/g) || []).length;
 
     const passed = Boolean(
       hasAbout &&
@@ -473,10 +473,10 @@ function runTier2() {
     assertTest(
       "tier2",
       "E2E-T2-01",
-      "About Us section contains EXACTLY ONE founder (Ngozi) with biography, and ZERO co-founders",
+      "About Us section contains EXACTLY ONE founder (Esther) with biography, and ZERO co-founders",
       passed,
       {
-        expected: "Exactly 1 founder (Ngozi), 0 co-founders, 0 secondary executive bios",
+        expected: "Exactly 1 founder (Esther), 0 co-founders, 0 secondary executive bios",
         observed: content
           ? `Founder detected: ${hasFounder}, Co-founder mentions: ${coFounderMatches.length}, Other execs: ${secondaryExecMatches.length}`
           : "AboutUs component or section not found",
@@ -542,7 +542,7 @@ function runTier2() {
       : contactResult.content;
 
     const content = contactSectionContent || "";
-    const expectedEmail = "ngozi@neurogridos.site";
+    const expectedEmail = "esther@neurogrid.site";
     const legacyEmail = "dispatch@neurogrid-os.io";
 
     // Extract all email addresses matching regex
@@ -556,7 +556,7 @@ function runTier2() {
     assertTest(
       "tier2",
       "E2E-T2-03",
-      "Contact Us section contains EXACTLY 1 business email (ngozi@neurogridos.site) and zero extraneous emails",
+      "Contact Us section contains EXACTLY 1 business email (esther@neurogrid.site) and zero extraneous emails",
       passed,
       {
         expected: `Exactly 1 email (${expectedEmail})`,
@@ -583,8 +583,8 @@ function runTier2() {
       : contactResult.content;
 
     const content = contactSectionContent || "";
-    const expectedDisplayPhone = "+234 704 255 6872";
-    const expectedNormalizedPhone = "2347042556872";
+    const expectedDisplayPhone = "+234 913 608 8893";
+    const expectedNormalizedPhone = "2349136088893";
     const legacyNormalizedPhone = "14158904743";
 
     // Extract phone numbers matching standard formats
@@ -592,8 +592,8 @@ function runTier2() {
     const rawMatches = content.match(phoneRegex) || [];
     const normalizedMatches = [...new Set(rawMatches.map((p) => p.replace(/\D/g, "")).filter(p => p.length >= 10))];
 
-    const hasExpectedPhone = content.includes("704 255 6872") ||
-      content.includes("7042556872") ||
+    const hasExpectedPhone = content.includes("913 608 8893") ||
+      content.includes("9136088893") ||
       content.includes("415) 890-4743") ||
       normalizedMatches.includes(expectedNormalizedPhone) ||
       normalizedMatches.includes(legacyNormalizedPhone);
@@ -608,7 +608,7 @@ function runTier2() {
     assertTest(
       "tier2",
       "E2E-T2-04",
-      "Contact Us section contains EXACTLY 1 telephone number (+234 704 255 6872) and zero extraneous numbers",
+      "Contact Us section contains EXACTLY 1 telephone number (+234 913 608 8893) and zero extraneous numbers",
       passed,
       {
         expected: `Exactly 1 normalized phone (${expectedNormalizedPhone} / ${expectedDisplayPhone})`,

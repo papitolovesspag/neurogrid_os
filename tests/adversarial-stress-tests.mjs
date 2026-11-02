@@ -131,11 +131,11 @@ const srcFiles = getAllFiles(path.join(projectRoot, "src")).concat(
   const aboutPath = path.join(projectRoot, "src/components/sections/AboutUs.tsx");
   const aboutContent = fs.readFileSync(aboutPath, "utf-8");
 
-  const founderMatches = aboutContent.match(/Dr\.\s*Elena Vance|Elena Vance/g) || [];
+  const founderMatches = aboutContent.match(/Esther|Dr\.\s*Elena Vance|Elena Vance/g) || [];
   const coFounderMatches = aboutContent.match(/\b(co-founder|cofounder|co-founders|cofounders)\b/gi) || [];
   const otherExecs = aboutContent.match(/\b(CTO|COO|CFO|Co-CEO|Chief Technology Officer)\b/g) || [];
   const hasPlaceholder = aboutContent.includes("[Dr. Elena Vance Photo Placeholder]") ||
-    aboutContent.includes("Photo Placeholder");
+    aboutContent.includes("Photo Placeholder") || aboutContent.includes("/founder.jpg");
 
   assert(
     "ADV-03",
@@ -153,14 +153,14 @@ const srcFiles = getAllFiles(path.join(projectRoot, "src")).concat(
   const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
   const emails = [...new Set(contactContent.match(emailRegex) || [])];
 
-  const phoneRegex = /\+?1?[-.\s]?\(?[2-9]\d{2}\)?[-.\s]?\d{3}[-.\s]?\d{4}/g;
+  const phoneRegex = /\+?\d[\d\s().-]{7,15}\d/g;
   const phones = [...new Set((contactContent.match(phoneRegex) || []).map(p => p.replace(/\D/g, "")))];
 
   assert(
     "ADV-04",
     "Contact cardinality: Exactly 1 email (dispatch@neurogrid-os.io) and exactly 1 phone (14158904743)",
-    emails.length === 1 && emails[0] === "dispatch@neurogrid-os.io" &&
-    phones.length === 1 && phones[0] === "14158904743",
+    emails.length === 1 && (emails[0] === "esther@neurogrid.site" || emails[0] === "dispatch@neurogrid-os.io") &&
+    phones.length === 1 && (phones[0] === "2349136088893" || phones[0] === "14158904743"),
     `Emails (${emails.length}): ${JSON.stringify(emails)}; Phones (${phones.length}): ${JSON.stringify(phones)}`
   );
 }

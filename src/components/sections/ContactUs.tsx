@@ -63,10 +63,10 @@ export function ContactUs() {
                 Direct Executive &amp; Dispatch Email
               </div>
               <a
-                href="mailto:ngozi@neurogridos.site"
+                href="mailto:esther@neurogrid.site"
                 className="text-lg font-bold font-mono text-slate-900 dark:text-slate-100 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors mt-1 block"
               >
-                ngozi@neurogridos.site
+                esther@neurogrid.site
               </a>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                 Monitored for enterprise partnerships, grid integrations, and dispatch queries.
@@ -84,10 +84,10 @@ export function ContactUs() {
                 Mission Control Hotline
               </div>
               <a
-                href="tel:+2347042556872"
+                href="tel:+2349136088893"
                 className="text-lg font-bold font-mono text-slate-900 dark:text-slate-100 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors mt-1 block"
               >
-                +234 704 255 6872
+                +234 913 608 8893
               </a>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                 Direct executive line for utility dispatchers, real estate, and asset operators.
